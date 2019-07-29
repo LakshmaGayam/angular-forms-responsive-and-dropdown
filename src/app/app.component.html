@@ -2,6 +2,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <body>
     <form>
+      <h1>course enrollment</h1>
       <div class="form-group">
       <label>name:</label>
       <input type="text" class="form-control"><br><br>
@@ -9,14 +10,27 @@
       <div class="form-group">
       <label>email: </label>
       <input type="email" class="form-control"><br><br>
-      <label> select technology </label>
       </div>
+      <div class="form-group">
+      <label>phone number: </label>
+      <input type="tel" class="form-control">
+      </div>
+       <label> select technology </label>
       <div class="form-group">
       <select class="custom-select">
         <option selected="">Iam intrested in</option>
         <option *ngFor="let top of topic">{{top}}</option>
       </select>
       </div>
+      <div class="form-check">
+      <label>select timings</label><br>
+      <input type="radio" value="morning" class="form-check-input">
+      <label>morning(9:00 am to 12:00 pm)</label><br>
+      
+      <input type="radio" value="morning" class="form-check-input">
+       <label>evining(5:00 pm to 6:00pm</label>
+      </div>
+     <button class="btn btn-primary">submit</button>
     </form>
   </body>
 </html>
