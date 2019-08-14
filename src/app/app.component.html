@@ -1,35 +1,43 @@
 <html>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <body>
-    <form>
+    <form #userform="ngForm">
+    
       <h1>course enrollment</h1>
+        {{userform.value | json}}
       <div class="form-group">
       <label>name:</label>
-      <input type="text" class="form-control"><br><br>
+      <input type="text" class="form-control" name="username" ngMode1 ><br><br>
       </div>
       <div class="form-group">
       <label>email: </label>
-      <input type="email" class="form-control"><br><br>
+      <input type="email" class="form-control"  name="email" ngMode1><br><br>
       </div>
       <div class="form-group">
       <label>phone number: </label>
-      <input type="tel" class="form-control">
+      <input type="tel" class="form-control" name="phonenumber" ngMode1>
       </div>
        <label> select technology </label>
       <div class="form-group">
-      <select class="custom-select">
+      <select class="custom-select" name="selectedTechnology" ngMode1 >
         <option selected="">Iam intrested in</option>
         <option *ngFor="let top of topic">{{top}}</option>
       </select>
       </div>
+      <div class="mb-3">
+        <label>select timings</label><br>
       <div class="form-check">
-      <label>select timings</label><br>
-      <input type="radio" value="morning" class="form-check-input">
+      <input type="radio" name="time" ngModel class="form-check-input">
       <label>morning(9:00 am to 12:00 pm)</label><br>
-      <input type="radio" value="evining" class="form-check-input">
-       <label>evining(5:00 pm to 6:00pm</label>
+      </div>
+      <div class="form-check">
+      <input class="form-check-input" type="radio"  name="time"  ngMode1>
+       <label>evining(5:00 pm to 6:00pm)</label>
+      </div>
       </div>
      <button class="btn btn-primary" (click)="getData()">submit</button>
+    
     </form>
+    
   </body>
 </html>
